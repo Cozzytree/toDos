@@ -1,0 +1,203 @@
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&family=Kenia&family=Patua+One&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  --headfont: "Kenia", sans-serif;
+  --primary-font: "Patua One", serif;
+  --secondary-font: "Boogaloo", sans-serif;
+}
+
+html {
+  font-size: 80%;
+}
+
+#root {
+  background-color: rgb(5, 18, 55);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 2em;
+  flex-direction: column;
+  gap: 2em;
+  justify-content: start;
+}
+
+.title {
+  color: rgb(72, 255, 0);
+  font-size: 2.5em;
+  letter-spacing: 0.04em;
+  text-shadow: 1px 2px 1px white;
+  font-family: var(--headfont);
+  font-weight: 200;
+}
+
+.form form {
+  display: flex;
+  align-items: end;
+  gap: 0.5em;
+}
+
+.form form input {
+  padding: 0.3em;
+  border-radius: 0.2em;
+  width: 10em;
+  border: 0.1px solid transparent;
+  letter-spacing: 0.1em;
+  height: 3em;
+  font-family: var(--primary-font);
+}
+
+.form form input:focus {
+  outline: none;
+  border-color: green;
+}
+
+.form form button {
+  background: rgb(24, 185, 24);
+  border: 0.1px solid rgb(24, 185, 24);
+  padding: 0.3em;
+  width: 4em;
+  border-radius: 0.3em;
+  cursor: pointer;
+  height: 3em;
+}
+
+.form form textarea {
+  min-height: 3em;
+  padding: 0.5em;
+  border-radius: 0.3em;
+  border: 1px solid transparent;
+  font-family: var(--secondary-font);
+  letter-spacing: 0.1em;
+  font-size: 1.2em;
+}
+
+.form form textarea:focus {
+  outline: none;
+  border-color: lime;
+}
+
+.todoItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5em;
+}
+
+.todos {
+  min-width: 20em;
+  display: flex;
+  gap: 0.4em;
+  background: rgb(231, 231, 231);
+  justify-content: space-between;
+  border-radius: 0.5em;
+  animation: appear 100ms linear;
+  padding: 1em;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: repeat;
+  position: relative;
+  box-shadow: inset 5px 4px 19px 3px rgb(5, 18, 55);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    scale: 0.5;
+  }
+  100% {
+    opacity: 1;
+    scale: 1;
+  }
+}
+
+.todos button {
+  width: 2em;
+  height: 2em;
+  cursor: pointer;
+}
+
+.todos .delete {
+  color: red;
+  font-weight: 800;
+  text-align: center;
+}
+
+.todos .complete {
+  width: 2em;
+  height: 2em;
+}
+.todos p {
+  font-size: 0.9em;
+  letter-spacing: 0.01em;
+  font-weight: 600;
+  font-family: sans-serif;
+}
+
+.todos div {
+  display: flex;
+  gap: 0.2em;
+  flex-direction: column;
+}
+
+.todos div input {
+  border: 1px solid rgb(0, 255, 0);
+  padding: 0.5em;
+  border-radius: 0.2em;
+  font-weight: 600;
+  font-family: var(--primary-font);
+  letter-spacing: 0.1em;
+  font-size: 1.1em;
+  background: rgba(166, 254, 166, 0.582);
+}
+
+.todos div input:focus {
+  outline: none;
+  border-color: greenyellow;
+}
+
+.todos div textarea {
+  padding: 0.2em;
+  height: 5em;
+  text-align: start;
+  background: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.577);
+  border-radius: 0.4em;
+  transition: 0.05s ease;
+  font-family: var(--secondary-font);
+  font-size: 1.3em;
+  letter-spacing: 0.01em;
+}
+
+.todos div textarea:focus {
+  backdrop-filter: blur(1.5px);
+  outline: none;
+  box-shadow: 0px 0.4px 1px black;
+}
+
+.strikeThrough {
+  text-decoration: line-through 5px red;
+}
+
+.hoverMessage {
+  position: absolute;
+  right: 10%;
+  top: -5%;
+  color: white;
+  animation: alert 0.4s ease;
+  background: black;
+  border: 0.1px solid rgb(255, 255, 255);
+  padding: 0.2em;
+  border-radius: 0.3em;
+}
+@keyframes alert {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
